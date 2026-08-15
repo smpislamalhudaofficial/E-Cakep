@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0f5ec7" />
-  <title>E-CAKEP v2.7 | Catatan Kedisiplinan Siswa</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>E-CAKEP v3.0.2 | Catatan Kedisiplinan Siswa</title>
+  <link rel="stylesheet" href="styles.css?v=3.0.2" />
 </head>
 <body>
   <!-- LOGIN -->
@@ -26,7 +26,7 @@
         <button class="btn primary login-btn" type="submit" id="loginBtn">Masuk</button>
       </form>
       <div class="login-hint"><strong>Login awal Admin:</strong> <code>admin</code> / <code>admin123</code>. Setelah masuk, ubah password melalui menu Akun Pengguna.</div>
-      <div class="login-status" id="loginStatus">Mode lokal siap digunakan.</div>
+      <div class="login-status" id="loginStatus">Menghubungkan ke Google Apps Script...</div>
     </div>
   </section>
 
@@ -228,8 +228,8 @@
         <!-- SETTINGS -->
         <section class="view" id="view-settings">
           <div class="settings-grid">
-            <section class="card"><div class="card-head"><div><span class="eyebrow">GOOGLE SPREADSHEET</span><h3>Sinkronisasi Data</h3><p>Tempel URL Web App Apps Script yang berakhiran <code>/exec</code>.</p></div></div><div class="settings-form"><div class="field"><label for="apiUrl">URL Google Apps Script Web App</label><input id="apiUrl" type="url" placeholder="https://script.google.com/macros/s/...../exec" /></div><div class="settings-status" id="settingsStatus"><span class="status-dot"></span><div><strong>Mode Lokal</strong><p>Data tersimpan di browser perangkat ini.</p></div></div><div class="settings-actions"><button class="btn secondary" id="testConnectionBtn">Tes Koneksi</button><button class="btn primary" id="saveSettingsBtn">Simpan Pengaturan</button><button class="btn secondary" id="restoreLocalBtn">Pulihkan Lokal → Spreadsheet</button></div><div class="info-box"><b>Penting:</b> tombol pemulihan digunakan jika data siswa, guru, atau pelanggaran sudah ada di browser tetapi belum masuk ke Spreadsheet. Login server harus aktif terlebih dahulu.</div></div></section>
-            <section class="card guide-card"><span class="eyebrow">PETUNJUK UPDATE</span><h3>Setelah Mengganti Code.gs</h3><ol><li>Ganti seluruh kode Apps Script dengan <code>Code.gs</code> v2.7.</li><li>Pastikan <code>SPREADSHEET_ID</code> benar.</li><li>Jalankan <code>setupSheets()</code> satu kali setelah update Code.gs.</li><li>Buka <b>Deploy → Manage deployments</b>.</li><li>Edit deployment, pilih <b>New version</b>, lalu <b>Deploy</b>.</li><li>Gunakan URL yang tetap berakhiran <code>/exec</code>.</li></ol><div class="info-box">Akun awal otomatis dibuat: <b>admin / admin123</b>. Segera ubah password setelah login.</div></section>
+            <section class="card"><div class="card-head"><div><span class="eyebrow">GOOGLE SPREADSHEET</span><h3>Sinkronisasi Data</h3><p>Koneksi Google Apps Script sudah ditanam otomatis di aplikasi GitHub Pages.</p></div></div><div class="settings-form"><div class="field"><label for="apiUrl">URL Google Apps Script Web App</label><input id="apiUrl" type="url" placeholder="https://script.google.com/macros/s/...../exec" /></div><div class="settings-status" id="settingsStatus"><span class="status-dot"></span><div><strong>Mode Lokal</strong><p>Data tersimpan di browser perangkat ini.</p></div></div><div class="settings-actions"><button class="btn secondary" id="testConnectionBtn">Tes Koneksi</button><button class="btn primary" id="saveSettingsBtn">Simpan Pengaturan</button><button class="btn secondary" id="restoreLocalBtn">Pulihkan Lokal → Spreadsheet</button></div><div class="info-box"><b>Penting:</b> tombol pemulihan digunakan jika data siswa, guru, atau pelanggaran sudah ada di browser tetapi belum masuk ke Spreadsheet. Login server harus aktif terlebih dahulu.</div></div></section>
+            <section class="card guide-card"><span class="eyebrow">PETUNJUK UPDATE</span><h3>Setelah Mengganti Code.gs</h3><ol><li>Ganti seluruh kode Apps Script dengan <code>Code.gs</code> v3.0.</li><li>Pastikan <code>SPREADSHEET_ID</code> benar.</li><li>Jalankan <code>setupSheets()</code> satu kali setelah update Code.gs.</li><li>Buka <b>Deploy → Manage deployments</b>.</li><li>Edit deployment, pilih <b>New version</b>, lalu <b>Deploy</b>.</li><li>Gunakan URL yang tetap berakhiran <code>/exec</code>.</li></ol><div class="info-box">Akun awal otomatis dibuat: <b>admin / admin123</b>. Segera ubah password setelah login.</div></section>
           </div>
         </section>
       </main>
@@ -256,7 +256,15 @@
 
   <div class="toast-container" id="toastContainer"></div>
   <!-- Konfigurasi WAJIB dimuat sebelum aplikasi utama -->
-  <script src="config.js?v=3.0.2"></script>
+  <script>
+  // Konfigurasi ditanam langsung agar tidak terkena cache config.js di GitHub Pages.
+  window.ECAKEP_CONFIG = Object.freeze({
+    APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzrSujnByMtX4DvRXI9DxSsKLxOj3JOJUHUyLVHpZmqnCHyPCxfArmXuwKBUdn71-AfZg/exec',
+    API_VERSION: 30,
+    APP_NAME: 'E-CAKEP v3.0.2'
+  });
+</script>
+  <!-- Modul Excel untuk impor/ekspor .xlsx -->
   <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
   <script src="app.js?v=3.0.2"></script>
 </body>
