@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0f5ec7" />
-  <title>E-CAKEP v3.0 | Catatan Kedisiplinan Siswa</title>
+  <title>E-CAKEP v2.7 | Catatan Kedisiplinan Siswa</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -183,17 +183,17 @@
         <!-- DATA SISWA -->
         <section class="view" id="view-students">
           <section class="card">
-            <div class="toolbar"><div><span class="eyebrow">MASTER DATA</span><h3>Data Siswa</h3><p>Poin awal setiap siswa adalah 100 dan berkurang otomatis saat pelanggaran dicatat.</p></div><div class="toolbar-actions wrap-mobile admin-actions"><input type="file" id="studentExcelInput" accept=".xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" class="hidden" /><button class="btn secondary small" id="downloadStudentsExcelBtn">Unduh Data Excel .xlsx</button><button class="btn secondary small" id="downloadStudentTemplateBtn">Unduh Template Excel .xlsx</button><button class="btn secondary small admin-only-control" id="importStudentExcelBtn">Impor Excel .xls/.xlsx</button><button class="btn danger-outline small admin-only-control" id="resetAllPointsBtn">Reset Semua Poin</button><button class="btn primary small admin-only-control" id="addStudentBtn">＋ Tambah Siswa</button></div></div>
+            <div class="toolbar"><div><span class="eyebrow">MASTER DATA</span><h3>Data Siswa</h3><p>Poin awal setiap siswa adalah 100 dan berkurang otomatis saat pelanggaran dicatat.</p></div><div class="toolbar-actions wrap-mobile admin-actions"><input type="file" id="studentExcelInput" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" class="hidden" /><button class="btn secondary small" id="downloadStudentsExcelBtn">Unduh Data Excel .xlsx</button><button class="btn secondary small" id="downloadStudentTemplateBtn">Unduh Template Excel .xlsx</button><button class="btn secondary small admin-only-control" id="importStudentExcelBtn">Impor Excel .xlsx</button><button class="btn danger-outline small admin-only-control" id="resetAllPointsBtn">Reset Semua Poin</button><button class="btn primary small admin-only-control" id="addStudentBtn">＋ Tambah Siswa</button></div></div>
             <div class="table-search-row student-filter-row"><input class="search-input wide" id="studentSearch" placeholder="Cari nama, NISN, atau kelas..." /><select id="studentClassFilter" class="filter-select"><option value="">Semua kelas</option></select><select id="studentSort" class="filter-select"><option value="name-asc">Nama A–Z</option><option value="name-desc">Nama Z–A</option><option value="class-asc">Kelas A–Z</option><option value="class-desc">Kelas Z–A</option></select><span class="record-count" id="studentCount">0 siswa</span></div>
             <div class="table-wrap"><table><thead><tr><th>Foto</th><th>Nama</th><th>NISN</th><th>Jenis Kelamin</th><th>Kelas</th><th>Poin</th><th>Aksi</th></tr></thead><tbody id="studentTableBody"></tbody></table></div>
-            <div class="empty-state hidden" id="studentEmpty"><strong>Belum ada siswa</strong><span>Admin dapat menambah manual atau impor dari file Excel (.xls/.xlsx).</span></div>
+            <div class="empty-state hidden" id="studentEmpty"><strong>Belum ada siswa</strong><span>Admin dapat menambah manual atau impor dari file Excel (.xlsx).</span></div>
           </section>
         </section>
 
         <!-- DATA GURU -->
         <section class="view" id="view-teachers">
           <section class="card">
-            <div class="toolbar"><div><span class="eyebrow">MASTER DATA</span><h3>Data Guru</h3><p>Nama guru akan muncul pada form pencatatan dan dapat ditautkan ke akun Guru.</p></div><div class="toolbar-actions wrap-mobile"><input type="file" id="teacherExcelInput" accept=".xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" class="hidden" /><button class="btn secondary small" id="downloadTeacherTemplateBtn">Unduh Template Excel .xlsx</button><button class="btn secondary small" id="importTeacherExcelBtn">Impor Excel .xls/.xlsx</button><button class="btn primary small" id="addTeacherBtn">＋ Tambah Guru</button></div></div>
+            <div class="toolbar"><div><span class="eyebrow">MASTER DATA</span><h3>Data Guru</h3><p>Nama guru akan muncul pada form pencatatan dan dapat ditautkan ke akun Guru.</p></div><div class="toolbar-actions wrap-mobile"><input type="file" id="teacherExcelInput" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" class="hidden" /><button class="btn secondary small" id="downloadTeacherTemplateBtn">Unduh Template Excel .xlsx</button><button class="btn secondary small" id="importTeacherExcelBtn">Impor Excel .xlsx</button><button class="btn primary small" id="addTeacherBtn">＋ Tambah Guru</button></div></div>
             <div class="table-search-row"><input class="search-input wide" id="teacherSearch" placeholder="Cari nama, jabatan, atau alamat..." /><span class="record-count" id="teacherCount">0 guru</span></div>
             <div class="table-wrap"><table><thead><tr><th>Foto</th><th>Nama</th><th>Alamat</th><th>Jabatan</th><th>Aksi</th></tr></thead><tbody id="teacherTableBody"></tbody></table></div>
             <div class="empty-state hidden" id="teacherEmpty"><strong>Belum ada guru</strong><span>Tambahkan data guru agar dapat dipilih pada form utama.</span></div>
@@ -203,7 +203,7 @@
         <!-- AKUN -->
         <section class="view" id="view-users">
           <section class="card">
-            <div class="toolbar"><div><span class="eyebrow">LOGIN ADMIN / GURU / SISWA-WALI</span><h3>Akun Pengguna</h3><p>Kelola akun Admin, Guru, serta Siswa/Wali Murid. Akun Siswa/Wali ditautkan ke NISN siswa.</p></div><div class="toolbar-actions wrap-mobile"><input type="file" id="userExcelInput" accept=".xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" class="hidden" /><button class="btn secondary small" id="downloadUserTemplateBtn">Unduh Template Excel .xlsx</button><button class="btn secondary small" id="importUserExcelBtn">Impor Excel .xls/.xlsx</button><button class="btn primary small" id="addUserBtn">＋ Tambah Akun</button></div></div>
+            <div class="toolbar"><div><span class="eyebrow">LOGIN ADMIN / GURU / SISWA-WALI</span><h3>Akun Pengguna</h3><p>Kelola akun Admin, Guru, serta Siswa/Wali Murid. Akun Siswa/Wali ditautkan ke NISN siswa.</p></div><div class="toolbar-actions wrap-mobile"><input type="file" id="userExcelInput" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" class="hidden" /><button class="btn secondary small" id="downloadUserTemplateBtn">Unduh Template Excel .xlsx</button><button class="btn secondary small" id="importUserExcelBtn">Impor Excel .xlsx</button><button class="btn primary small" id="addUserBtn">＋ Tambah Akun</button></div></div>
             <div class="table-search-row"><input class="search-input wide" id="userSearch" placeholder="Cari username, nama, role, kelas..." /><span class="record-count" id="userCount">0 akun</span></div>
             <div class="table-wrap"><table><thead><tr><th>Foto</th><th>Username</th><th>Nama</th><th>Role</th><th>Guru Tertaut</th><th>Siswa Tertaut</th><th>Kelas Wali</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="userTableBody"></tbody></table></div>
           </section>
@@ -228,8 +228,8 @@
         <!-- SETTINGS -->
         <section class="view" id="view-settings">
           <div class="settings-grid">
-            <section class="card"><div class="card-head"><div><span class="eyebrow">GOOGLE SPREADSHEET</span><h3>Sinkronisasi Data</h3><p>Pada versi GitHub Pages, URL Web App dibaca otomatis dari <code>config.js</code>.</p></div></div><div class="settings-form"><div class="field"><label for="apiUrl">URL Google Apps Script Web App</label><input id="apiUrl" type="url" placeholder="Diatur melalui config.js" disabled /></div><div class="settings-status" id="settingsStatus"><span class="status-dot"></span><div><strong>Memeriksa konfigurasi</strong><p>E-CAKEP akan membaca koneksi dari config.js.</p></div></div><div class="settings-actions"><button class="btn secondary" id="testConnectionBtn">Tes Koneksi</button><button class="btn primary" id="saveSettingsBtn" disabled>Diatur di config.js</button><button class="btn secondary" id="restoreLocalBtn">Pulihkan Lokal → Spreadsheet</button></div><div class="info-box"><b>GitHub Pages:</b> semua perangkat otomatis memakai URL Apps Script yang sama dari <code>config.js</code>. Foto profil disimpan di Google Drive milik akun yang menjalankan Apps Script.</div></div></section>
-            <section class="card guide-card"><span class="eyebrow">PETUNJUK UPDATE</span><h3>Setelah Mengganti Code.gs</h3><ol><li>Ganti seluruh kode Apps Script dengan <code>Code.gs</code> v3.0.</li><li>Pastikan <code>SPREADSHEET_ID</code> benar.</li><li>Jalankan <code>setupSheets()</code> agar kolom foto dan folder Google Drive dibuat.</li><li>Buka <b>Deploy → Manage deployments</b>.</li><li>Edit deployment, pilih <b>New version</b>, lalu <b>Deploy</b>.</li><li>Salin URL <code>/exec</code> ke file <code>config.js</code>, kemudian upload file web ke GitHub Pages.</li></ol><div class="info-box">Akun awal otomatis dibuat: <b>admin / admin123</b>. Segera ubah password setelah login.</div></section>
+            <section class="card"><div class="card-head"><div><span class="eyebrow">GOOGLE SPREADSHEET</span><h3>Sinkronisasi Data</h3><p>Tempel URL Web App Apps Script yang berakhiran <code>/exec</code>.</p></div></div><div class="settings-form"><div class="field"><label for="apiUrl">URL Google Apps Script Web App</label><input id="apiUrl" type="url" placeholder="https://script.google.com/macros/s/...../exec" /></div><div class="settings-status" id="settingsStatus"><span class="status-dot"></span><div><strong>Mode Lokal</strong><p>Data tersimpan di browser perangkat ini.</p></div></div><div class="settings-actions"><button class="btn secondary" id="testConnectionBtn">Tes Koneksi</button><button class="btn primary" id="saveSettingsBtn">Simpan Pengaturan</button><button class="btn secondary" id="restoreLocalBtn">Pulihkan Lokal → Spreadsheet</button></div><div class="info-box"><b>Penting:</b> tombol pemulihan digunakan jika data siswa, guru, atau pelanggaran sudah ada di browser tetapi belum masuk ke Spreadsheet. Login server harus aktif terlebih dahulu.</div></div></section>
+            <section class="card guide-card"><span class="eyebrow">PETUNJUK UPDATE</span><h3>Setelah Mengganti Code.gs</h3><ol><li>Ganti seluruh kode Apps Script dengan <code>Code.gs</code> v2.7.</li><li>Pastikan <code>SPREADSHEET_ID</code> benar.</li><li>Jalankan <code>setupSheets()</code> satu kali setelah update Code.gs.</li><li>Buka <b>Deploy → Manage deployments</b>.</li><li>Edit deployment, pilih <b>New version</b>, lalu <b>Deploy</b>.</li><li>Gunakan URL yang tetap berakhiran <code>/exec</code>.</li></ol><div class="info-box">Akun awal otomatis dibuat: <b>admin / admin123</b>. Segera ubah password setelah login.</div></section>
           </div>
         </section>
       </main>
@@ -255,8 +255,10 @@
   </div>
 
   <div class="toast-container" id="toastContainer"></div>
+  <!-- Konfigurasi WAJIB dimuat sebelum aplikasi utama -->
+  <script src="config.js?v=3.0.1"></script>
+  <!-- Modul Excel untuk impor/ekspor .xlsx -->
   <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
-  <script src="config.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=3.0.1"></script>
 </body>
 </html>
