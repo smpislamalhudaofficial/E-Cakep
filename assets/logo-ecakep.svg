@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
-<title>E-CAKEP</title><desc>Logo utama E-CAKEP Catatan Kedisiplinan</desc>
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4aa8ff"/><stop offset="1" stop-color="#2cc4aa"/></linearGradient></defs>
-<rect x="8" y="8" width="240" height="240" rx="62" fill="url(#g)"/>
-<text x="128" y="155" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="88" font-weight="800" fill="#fff">EC</text>
-</svg>
