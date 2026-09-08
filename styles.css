@@ -107,3 +107,20 @@ html, body { background: linear-gradient(135deg, #ffffff 0%, #faf7ff 52%, #f5f9f
 .login-brand p { opacity: .95; }
 .nav-item.active { background: linear-gradient(135deg, #9733EE 0%, #DA22FF 100%); }
 .btn.primary { background: linear-gradient(135deg, #021B79 0%, #0575E6 100%); }
+
+/* E-CAKEP v3.4 — final requested purple theme */
+html, body { background: linear-gradient(135deg, #ffffff 0%, #fbf8ff 52%, #f7f2ff 100%); }
+.app-shell { background: linear-gradient(135deg, #ffffff 0%, #fbf8ff 52%, #f7f2ff 100%); }
+.sidebar { background: linear-gradient(180deg, #5b2a86 0%, #8e44ad 100%); }
+.nav-item { color: #ffffff; }
+.nav-item:hover { background: rgba(255,255,255,.14); color: #ffffff; }
+.nav-item.active { background: linear-gradient(135deg, #e7d2ff 0%, #f5e9ff 100%); color: #111111; box-shadow: 0 8px 20px rgba(151,51,238,.25); }
+.nav-item.active .nav-icon img { filter: brightness(0); opacity: .9; }
+.nav-item.active:hover { color: #111111; }
+.btn.primary { background: linear-gradient(135deg, #7b2cbf 0%, #c026d3 100%); color: #ffffff; box-shadow: 0 7px 16px rgba(123,44,191,.24); }
+.btn.primary:hover { background: linear-gradient(135deg, #6d28a8 0%, #a91eb8 100%); }
+.bar-fill { background: linear-gradient(180deg, #c026d3, #7b2cbf); }
+.login-screen { background: linear-gradient(135deg, #ffffff 0%, #fbf8ff 52%, #f4ecff 100%); }
+.login-brand { background: linear-gradient(135deg, #7b2cbf 0%, #c026d3 100%); }
+.login-brand h1, .login-brand p { color: #ffffff; }
+.eyebrow { color: #7b2cbf; }
